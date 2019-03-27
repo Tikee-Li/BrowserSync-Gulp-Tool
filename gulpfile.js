@@ -27,7 +27,7 @@ gulp.task('static', function() {
 
 // html 整合
 gulp.task('html', function() {
-    gulp.src('src/template/**/*')
+    gulp.src('src/template/**/*.*')
         .pipe(fileinclude({
             prefix: '@@',
             basepath: '@file'

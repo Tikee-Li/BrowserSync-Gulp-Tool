@@ -18,12 +18,13 @@ gulp.task('ico', function() {
 //copy 整合资源
 gulp.task('assets', function() {
     gulp.src('src/assets/**/*')
-        .pipe(gulp.dest('dist/assets'))
-        .pipe(browserSync.stream());
+        .pipe(gulp.dest('dist/assets'));
 });
+// static资源相对较少，stream放在此处不影响自动刷新前的文件复制
 gulp.task('static', function() {
     gulp.src('src/static/**/*')
-        .pipe(gulp.dest('dist/static'));
+        .pipe(gulp.dest('dist/static'))
+        .pipe(browserSync.stream());
 });
 
 // html 整合

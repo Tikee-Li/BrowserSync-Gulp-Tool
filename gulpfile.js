@@ -32,7 +32,8 @@ gulp.task('html', function() {
             prefix: '@@',
             basepath: '@file'
         }))
-        .pipe(gulp.dest('dist'));
+        .pipe(gulp.dest('dist'))
+        .pipe(browserSync.stream());
 });
 
 

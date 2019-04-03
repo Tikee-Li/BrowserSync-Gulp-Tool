@@ -18,7 +18,8 @@ gulp.task('ico', function() {
 //copy 整合资源
 gulp.task('assets', function() {
     gulp.src('src/assets/**/*')
-        .pipe(gulp.dest('dist/assets'));
+        .pipe(gulp.dest('dist/assets'))
+        .pipe(browserSync.stream());
 });
 gulp.task('static', function() {
     gulp.src('src/static/**/*')
@@ -32,8 +33,7 @@ gulp.task('html', function() {
             prefix: '@@',
             basepath: '@file'
         }))
-        .pipe(gulp.dest('dist'))
-        .pipe(browserSync.stream());
+        .pipe(gulp.dest('dist'));
 });
 
 
